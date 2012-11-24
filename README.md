@@ -48,3 +48,14 @@ The only other different one is GroupRequiredMixin
 		# if you do not.
 
 		group = "My Awesome Group"
+
+
+### Permission Required Mixin
+
+Original work by Kenneth Love and Chris Jones.  Modified to always raise PermissionDenied
+
+	from infuse.auth.permissions import PermissionRequiredMixin
+
+	class PermissionRequiredView(PermissionRequiredMixin, ListView):
+		# Permission to require
+		permssion_required = 'model.can_do_something'
