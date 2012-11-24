@@ -20,6 +20,8 @@ Currently Supported Mixins
 Usage
 -----
 
+### Login Required Mixin
+
 Inherit the mixin you want to use and add any additional (optional) params.
 
 	from infuse.auth.permissions import LoginRequiredMixin
@@ -31,6 +33,8 @@ Inherit the mixin you want to use and add any additional (optional) params.
 		login_url = "/my/new/url/"
 
 		# Do the rest of your stuff.....
+
+### Group Required Mixin
 
 The only other different one is GroupRequiredMixin
 
