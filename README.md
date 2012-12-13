@@ -1,4 +1,4 @@
-django-infuse
+Django Infuse
 =============
 
 Series of Class based mixins.  Requires Django 1.4s use of PermissionDenied exception. 
@@ -59,3 +59,8 @@ Original work by Kenneth Love and Chris Jones.  Modified to always raise Permiss
 	class PermissionRequiredView(PermissionRequiredMixin, ListView):
 		# Permission to require
 		permssion_required = 'model.can_do_something'
+		
+### What is Next?
+
+* Wizard Mixin Helpers
+
