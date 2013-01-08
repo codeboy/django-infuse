@@ -60,7 +60,17 @@ Original work by Kenneth Love and Chris Jones.  Modified to always raise Permiss
 		# Permission to require
 		permssion_required = 'model.can_do_something'
 		
-### What is Next?
 
-* Wizard Mixin Helpers
+### Save and Continue Form Wizard
+
+This mixin is still very much in a alpha status.  The django form wizard does not support the concept of 'Finish Later' or any
+built in ability to save the form 'half done'.  This mixin provides a way for developers to add a 'Finish Later' functionality 
+to their form wizard.
+
+In order to use the 'Finish Later' functionality you must add a button/input element on your form wizard templates and name it 'save_only'
+
+    <input type='submit' name='save_only' value='Finish Later'>
+    
+
+
 
