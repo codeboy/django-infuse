@@ -86,26 +86,26 @@ In addition to the ``save_only_url`` that you are required to set, you may also 
     def post_save_only(self):
             pass
     
-        def process_wizard_goto_step(self, wizard_goto_step):
-            if wizard_goto_step and wizard_goto_step in self.get_form_list():
-                self.storage.current_step = wizard_goto_step
-                form = self.get_form(
-                    data=self.storage.get_step_data(self.steps.current),
-                    files=self.storage.get_step_files(self.steps.current))
-                return self.render(form)
+    def process_wizard_goto_step(self, wizard_goto_step):
+        if wizard_goto_step and wizard_goto_step in self.get_form_list():
+            self.storage.current_step = wizard_goto_step
+            form = self.get_form(
+                data=self.storage.get_step_data(self.steps.current),
+                files=self.storage.get_step_files(self.steps.current))
+            return self.render(form)
     
-        def pre_process(self, form):
-            pass
-    
-        def additional_file_processing(self):
-            pass
+    def pre_process(self, form):
+        pass
+
+    def additional_file_processing(self):
+        pass
 
     
-``post_save_only`` - Called when save_only is executed.  Provides a way to hook into the save_only processor
-``pre_process`` - Do any pre processing before forms are attempted to save.  Can be used to setup formsets.
-``additional_file_processing`` - Do any additional file processing.  I use this to make sure that files saved to AWS are saved 
+* ``post_save_only`` - Called when save_only is executed.  Provides a way to hook into the save_only processor
+* ``pre_process`` - Do any pre processing before forms are attempted to save.  Can be used to setup formsets.
+* ``additional_file_processing`` - Do any additional file processing.  I use this to make sure that files saved to AWS are saved 
 with the correct file name.
-``process_wizard_goto_step`` - Allows you to override the default behaviour of going between steps.
+* ``process_wizard_goto_step`` - Allows you to override the default behaviour of going between steps.
 
 This particular mixin is extreamly powerful, but is in a constantly changing state.  If you are using it, please provide some feedback of how and what your using it for, as well as any improvements you have.
  
